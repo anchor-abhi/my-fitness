@@ -36,8 +36,7 @@ const HeroBanner = () => {
         Exercise
       </Typography>
       <Button
-      
-        sx={{marginTop:"5px", backgroundColor: "#ff2625", padding: "10px" }}
+        sx={{ marginTop: "5px", backgroundColor: "#ff2625", padding: "10px" }}
         variant="contained"
         color="error"
         href="#exercises"
