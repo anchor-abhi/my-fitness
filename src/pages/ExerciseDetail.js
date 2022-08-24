@@ -17,7 +17,7 @@ const ExerciseDetail = () => {
 
   useEffect(() => {
     const fetchExercisesData = async () => {
-      const exerciseDbUrl = "http://localhost:9000";
+      const exerciseDbUrl = "https://my-fitness-buddy.herokuapp.com";
       const youtubeSearchUrl =
         "https://youtube-search-and-download.p.rapidapi.com";
 

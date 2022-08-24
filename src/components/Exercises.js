@@ -16,12 +16,12 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
       if (bodyPart === "all") {
         exercisesData = await fetchData(
-          "http://localhost:9000/exercises",
+          "https://my-fitness-buddy.herokuapp.com/exercises",
           exerciseOptions
         );
       } else {
         exercisesData = await fetchData(
-          `http://localhost:9000/exercises/bodyPart/${bodyPart}`,
+          `https://my-fitness-buddy.herokuapp.com/exercises/bodyPart/${bodyPart}`,
           exerciseOptions
         );
       }

@@ -21,7 +21,12 @@ app.get("/exercises/bodyPart/:bodyPart", getBodyPartExercise);
 app.get("/exercises/target/:target", getExerciseByTarget);
 app.get("/exercises/id/:id", getExerciseById);
 app.get("/exercises/equipment/:equipment", getExerciseByEquipment);
-app.listen(9000, () => {
+
+require("dotenv").config();
+
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, "0.0.0.0", () => {
   connect();
-  console.log("Listening at 9000");
+  console.log(`Listening at ${PORT}`);
 });

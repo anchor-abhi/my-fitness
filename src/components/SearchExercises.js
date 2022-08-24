@@ -35,8 +35,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const handleSearch = async () => {
     if (search) {
       const exercisesData = await fetchData(
-        "https://exercisedb.p.rapidapi.com/exercises",
-        // "http://localhost:9000/exercises",
+        "https://my-fitness-buddy.herokuapp.com/exercises",
         exerciseOptions
       );
 
