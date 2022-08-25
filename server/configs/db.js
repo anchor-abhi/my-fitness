@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 module.exports = async () => {
-  await mongoose.connect(
-    "mongodb+srv://abhi:abhi_123@cluster0.en9rsrt.mongodb.net/fitness-app-backend"
-  );
+  await mongoose.connect(process.env.DB);
 };

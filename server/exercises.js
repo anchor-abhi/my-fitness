@@ -2,13 +2,15 @@ const exerciseModel = require("./models/exercise.model");
 const axios = require("axios");
 const connect = require("./configs/db");
 
+console.log(process.env);
+
 const getExercises = async () => {
   await connect();
   const options = {
     method: "GET",
     url: "https://exercisedb.p.rapidapi.com/exercises",
     headers: {
-      "X-RapidAPI-Key": "9367c8d3f8msh5bd8c23bceb3e19p17e65djsnfa6265a34c1a",
+      "X-RapidAPI-Key": process.env.API_KEY,
       "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
     },
   };
