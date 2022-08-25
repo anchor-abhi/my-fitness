@@ -47,6 +47,7 @@ const ExerciseDetail = () => {
     };
 
     fetchExercisesData();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id]);
   return (
     <Box>

@@ -29,8 +29,15 @@ const Detail = ({ exerciseDetail }) => {
     >
       <img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
       <Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
-        <Typography variant="h3">{name}</Typography>
-        <Typography variant="h6">
+        <Typography
+          variant="h2"
+          sx={{ fontSize: { lg: "44px", xs: "25px" } }}
+          textTransform="capitalize"
+          fontWeight={600}
+        >
+          {name}
+        </Typography>
+        <Typography variant="h6"  sx={{ fontSize: { lg: "22px", xs: "18px" } }}>
           Exercises keep you strong. {name} {` `} is one of the best exercises
           to target your {target}. It will help you improve your mood and gain
           energy

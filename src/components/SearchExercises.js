@@ -2,8 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Box, Stack, Button, TextField, Typography } from "@mui/material";
 import HorizontalScrollBar from "./HorizontalScrollBar";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
+import CustomizedDialogs from "./Dialog";
 
-const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
+const SearchExercises = ({
+  setCheckSearch,
+  setExercises,
+  bodyPart,
+  setBodyPart,
+}) => {
   const [search, setSearch] = useState("");
   const [bodyParts, setBodyParts] = useState([]);
 
@@ -50,6 +56,12 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
 
       setSearch("");
+      if (searchedExercises.length == 0) {
+        setCheckSearch(false);
+      }
+      else{
+        setCheckSearch(true);
+      }
       setExercises(searchedExercises);
     }
   };

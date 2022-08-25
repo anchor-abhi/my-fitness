@@ -5,8 +5,15 @@ import { Box, Stack, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import ExerciseCard from "./ExerciseCard";
 import Loader from "./Loader";
+import CustomizedDialogs from "./Dialog";
 
-const Exercises = ({ exercises, setExercises, bodyPart }) => {
+const Exercises = ({
+  setCheckSearch,
+  checkSearch,
+  exercises,
+  setExercises,
+  bodyPart,
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
 
@@ -25,7 +32,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
           exerciseOptions
         );
       }
-
+      setCheckSearch(true);
       setExercises(exercisesData);
     };
 
@@ -46,7 +53,12 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
+  if (!checkSearch) return <CustomizedDialogs />;
   if (!currentExercises.length) return <Loader />;
+
+  const handleScrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <Box id="exercises" sx={{ mt: { lg: "109px" } }} mt="50px" p="20px">
@@ -58,6 +70,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       >
         Showing Results
       </Typography>
+
       <Stack
         direction="row"
         sx={{ gap: { lg: "107px", xs: "50px" } }}
@@ -65,9 +78,13 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         justifyContent="center"
       >
         {currentExercises.map((exercise, idx) => (
-          <ExerciseCard key={idx} exercise={exercise} />
+          <ExerciseCard
+            key={idx}
+            exercise={exercise}
+          />
         ))}
       </Stack>
+
       <Stack sx={{ mt: { lg: "114px", xs: "70px" } }} alignItems="center">
         {exercises.length > 9 && (
           <Pagination
