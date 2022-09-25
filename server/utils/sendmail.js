@@ -20,7 +20,7 @@ module.exports =function (name, email, message) {
       from: "abhiayodhya1802@gmail.com",
       to: "theabhishek1802@gmail.com",
       subject: email,
-      text: name+  " sent you message  : "+ message,
+      text: name+  " sent you message from your PORTFOLIO : "+ message,
     };
   
     mailTransporter.sendMail(mailDetails, function (err, data) {
