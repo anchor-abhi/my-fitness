@@ -17,7 +17,7 @@ const ExerciseDetail = () => {
 
   useEffect(() => {
     const fetchExercisesData = async () => {
-      const exerciseDbUrl = "https://my-fitness.onrender.com/";
+      const exerciseDbUrl = "https://my-fitness.onrender.com";
       const youtubeSearchUrl =
         "https://youtube-search-and-download.p.rapidapi.com";
 
