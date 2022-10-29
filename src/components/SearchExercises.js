@@ -40,7 +40,7 @@ const SearchExercises = ({
   const handleSearch = async () => {
     if (search) {
       const exercisesData = await fetchData(
-        "https://my-fitness-buddy.herokuapp.com/exercises",
+        "https://my-fitness.onrender.com/exercises",
         exerciseOptions
       );
 
@@ -57,8 +57,7 @@ const SearchExercises = ({
       setSearch("");
       if (searchedExercises.length == 0) {
         setCheckSearch(false);
-      }
-      else{
+      } else {
         setCheckSearch(true);
       }
       setExercises(searchedExercises);

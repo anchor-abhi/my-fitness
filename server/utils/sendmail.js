@@ -17,7 +17,7 @@ module.exports = function (name, email, message) {
   });
 
   let mailDetails = {
-    from: "abhiayodhya1802@gmail.com",
+    from: email,
     to: "theabhishek1802@gmail.com",
     subject: email,
     text: name + " sent you message from your PORTFOLIO : " + message,

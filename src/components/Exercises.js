@@ -23,12 +23,12 @@ const Exercises = ({
 
       if (bodyPart === "all") {
         exercisesData = await fetchData(
-          "https://my-fitness-buddy.herokuapp.com/exercises",
+          "https://my-fitness.onrender.com/exercises",
           exerciseOptions
         );
       } else {
         exercisesData = await fetchData(
-          `https://my-fitness-buddy.herokuapp.com/exercises/bodyPart/${bodyPart}`,
+          `https://my-fitness.onrender.com/exercises/bodyPart/${bodyPart}`,
           exerciseOptions
         );
       }
